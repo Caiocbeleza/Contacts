@@ -69,7 +69,7 @@ import SpinnerLoad from "@/components/SpinnerLoad.vue";
                                 <router-link :to="`/contacts/edit/${contact.id}`"  class="btn btn-primary my-1">
                                     <i class="bi bi-pen"></i>
                                 </router-link>
-                                <button class="btn btn-danger my-1">
+                                <button class="btn btn-danger my-1" @click="deleteContact(contact.id)">
                                     <i class="bi bi-trash-fill"></i>
                                 </button>
                             </div>
@@ -105,7 +105,24 @@ export default{
             this.loading = false;
         }
     },
-    methods: {},
+    methods: {
+        async deleteContact(contactId){
+            try {
+                this.loading = true;
+                let response = await ContactService.deleteContact(contactId);
+                if(response){
+                    let response = await ContactService.getAllContacts();
+                    this.contacts = response.data;
+                    this.loading = false;                    
+                }                
+            } catch (error) {
+                this.errorMenssage = error;
+                this.loading = false;                
+            }
+
+        }
+
+    },
     components: { SpinnerLoad }
 }
 
