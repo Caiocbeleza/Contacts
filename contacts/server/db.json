@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "contact": 999999998,
+      "email": "john.doe@email.com",
+      "picture": "https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face.png"
+    },
+    {
+      "name": "Jane Doe",
+      "contact": 555555555,
+      "email": "janedoe@email.com",
+      "picture": "https://cdn-icons-png.flaticon.com/512/219/219969.png",
+      "id": 2
+    },
+    {
+      "name": "Caio",
+      "contact": 80808080,
+      "email": "caio@email.com",
+      "picture": "https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png",
+      "id": 3
+    }
+  ]
+}

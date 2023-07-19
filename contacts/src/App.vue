@@ -1,11 +1,10 @@
 <template>
   <NavBar/>
-  <Spinner/>
   <router-view/>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue';
+import NavBar from '@/components/NavBar';
   export default {
     name: 'App',
     components: {NavBar}
