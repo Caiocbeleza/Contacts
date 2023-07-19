@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "John Doe",
-      "contact": "999999999",
+      "contact": 999999998,
       "email": "john.doe@email.com",
       "picture": "https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face.png"
     },

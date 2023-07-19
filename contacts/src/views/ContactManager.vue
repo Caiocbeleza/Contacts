@@ -63,10 +63,10 @@ import SpinnerLoad from "@/components/SpinnerLoad.vue";
                                 </ul>
                             </div>
                             <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
-                                <router-link to="/contacts/view/:contactId" class="btn btn-warning my-1">
+                                <router-link :to="`/contacts/view/${contact.id}`" class="btn btn-warning my-1">
                                     <i class="bi bi-eye-fill"></i>
                                 </router-link>
-                                <router-link to="/contacts/edit/:contactId" class="btn btn-primary my-1">
+                                <router-link :to="`/contacts/edit/${contact.id}`"  class="btn btn-primary my-1">
                                     <i class="bi bi-pen"></i>
                                 </router-link>
                                 <button class="btn btn-danger my-1">
@@ -83,7 +83,7 @@ import SpinnerLoad from "@/components/SpinnerLoad.vue";
   
 <script>
 import ContactService from "../services/ContactService";
-import SpinnerLoad from "@/components/SpinnerLoad.vue";
+import SpinnerLoad from "@/components/SpinnerLoad";
 export default{
     name: "ContactManager",
     data: function () {

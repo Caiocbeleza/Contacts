@@ -63,7 +63,6 @@ import ContactService from '@/services/ContactService';
                 } catch (error) {
                     console.log(error);                    
                 }
-
             }
         } 
     }
