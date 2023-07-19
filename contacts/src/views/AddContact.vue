@@ -11,16 +11,16 @@
             <div class="col-md-4">
                 <form @submit.prevent="submitCreate()">
                     <div class="mb-2">
-                        <input v-model="contact.name" type="text" class="form-control" placeholder="Name">
+                        <input required v-model="contact.name" type="text" class="form-control" placeholder="Name">
                     </div>
                     <div class="mb-2">
-                        <input v-model="contact.contact" type="number" class="form-control" placeholder="Contact">
+                        <input required v-model="contact.contact" type="number" class="form-control" placeholder="Contact">
                     </div>
                     <div class="mb-2">
-                        <input v-model="contact.email" type="email" class="form-control" placeholder="Email">
+                        <input required v-model="contact.email" type="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="mb-2">
-                        <input v-model="contact.picture" type="text" class="form-control" placeholder="Picture URL">
+                        <input required v-model="contact.picture" type="text" class="form-control" placeholder="Picture URL">
                     </div>
                     <div class="mb-2">
                         <input type="submit" class="btn btn-success" value="Create">
