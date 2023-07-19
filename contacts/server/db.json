@@ -1,0 +1,18 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "contact": "999999999",
+      "email": "john.doe@email.com",
+      "picture": "https://e7.pngegg.com/pngimages/550/997/png-clipart-user-icon-foreigners-avatar-child-face.png"
+    },
+    {
+      "name": "Jane Doe",
+      "contact": 555555555,
+      "email": "janedoe@email.com",
+      "picture": "https://cdn-icons-png.flaticon.com/512/219/219969.png",
+      "id": 2
+    }
+  ]
+}
