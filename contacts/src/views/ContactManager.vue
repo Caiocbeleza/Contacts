@@ -1,6 +1,5 @@
 <template>
     <div class="container mt-3">
-import SpinnerLoad from "@/components/SpinnerLoad.vue";
         <div class="row">
             <div class="col">
                 <p class="h3 text-success fw-bold">Contact Manager
