@@ -69,12 +69,15 @@ import SpinnerLoad from "@/components/SpinnerLoad.vue";
                                 <router-link :to="`/contacts/edit/${contact.id}`"  class="btn btn-primary my-1">
                                     <i class="bi bi-pen"></i>
                                 </router-link>
-                                <button class="btn btn-danger my-1" @click="deleteContact(contact.id)">
+                                <button class="btn btn-danger my-1" @click="showConfirmation()">
                                     <i class="bi bi-trash-fill"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <ConfirmDialog v-if="showModal" @cancel="cancelDelete" @confirm="deleteContact(contact.id)"></ConfirmDialog>
                 </div>
             </div>
         </div>
@@ -84,6 +87,7 @@ import SpinnerLoad from "@/components/SpinnerLoad.vue";
 <script>
 import ContactService from "../services/ContactService";
 import SpinnerLoad from "@/components/SpinnerLoad";
+import ConfirmDialog from "@/components/ConfirmDialog";
 export default{
     name: "ContactManager",
     data: function () {
@@ -91,6 +95,7 @@ export default{
             loading: false,
             contacts: [],
             errorMenssage: null,
+            showModal: false,
         };
     },
     created: async function () {
@@ -113,17 +118,24 @@ export default{
                 if(response){
                     let response = await ContactService.getAllContacts();
                     this.contacts = response.data;
-                    this.loading = false;                    
+                    this.loading = false;
+                    this.showModal = false;                    
                 }                
             } catch (error) {
                 this.errorMenssage = error;
                 this.loading = false;                
             }
-
+        },
+        showConfirmation(){
+            this.showModal = true;
+        },
+        cancelDelete(){
+            this.showModal = false;
         }
 
+
     },
-    components: { SpinnerLoad }
+    components: { SpinnerLoad, ConfirmDialog }
 }
 
 </script>
