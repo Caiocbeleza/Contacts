@@ -11,7 +11,7 @@
             <div class="col-md-4">
                 <form @submit.prevent="submitCreate()">
                     <div class="mb-2">
-                        <input required v-model="contact.name" type="text" class="form-control" placeholder="Name">
+                        <input required v-model="contact.name" type="text" class="form-control" placeholder="Name" minlength="5">
                     </div>
                     <div class="mb-2">
                         <input required v-model="contact.contact" type="number" class="form-control" placeholder="Contact">
@@ -46,7 +46,7 @@ import ContactService from '@/services/ContactService';
                     contact: '',
                     email: '',
                     picture: ''
-                }
+                },
 
             }
         },
@@ -63,7 +63,7 @@ import ContactService from '@/services/ContactService';
                 } catch (error) {
                     console.log(error);                    
                 }
-            }
+            },
         } 
     }
     
