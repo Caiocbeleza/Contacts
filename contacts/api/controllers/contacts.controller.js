@@ -10,8 +10,19 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     const contact = await service.getContactById(req.params.id)
+    if(contact.length == 0)
+        res.status(404).json('No record with given id: ' + req.params.id)
     res.send(contact)
 })
+
+
+router.delete('/:id', async (req, res) => {
+    const contact = await service.deleteContact(req.params.id)
+    if(contact.length == 0)
+        res.status(404).json('No record with given id: ' + req.params.id)
+    res.send(contact)
+})
+
 
 
 

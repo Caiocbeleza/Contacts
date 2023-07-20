@@ -1,13 +1,19 @@
 const db = require('../db')
 
 module.exports.getAllContacts = async () => {
-    const [rows] = await db.query("SELECT * FROM contacts")
+    const [contacts] = await db.query("SELECT * FROM contacts")
         .catch(err => console.log(err))
-        return rows;
+        return contacts;
 }
 
 module.exports.getContactById = async (id) => {
-    const [rows] = await db.query("SELECT * FROM contacts WHERE id = " + id)
+    const [contact] = await db.query("SELECT * FROM contacts WHERE id = ?", [id])
         .catch(err => console.log(err))
-        return rows;
+        return contact;
+}
+
+module.exports.deleteContact = async (id) => {
+    const [contact] = await db.query("DELETE FROM contacts WHERE id = ?", [id])
+        .catch(err => console.log(err))
+        return contact;
 }
