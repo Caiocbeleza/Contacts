@@ -13,7 +13,13 @@ module.exports.getContactById = async (id) => {
 }
 
 module.exports.deleteContact = async (id) => {
-    const [contact] = await db.query("DELETE FROM contacts WHERE id = ?", [id])
+    const [{affectedRows}] = await db.query("DELETE FROM contacts WHERE id = ?", [id])
         .catch(err => console.log(err))
-        return contact;
+        return affectedRows;
 }
+
+// module.exports.addContact = async (name, contact, email, picture) => {
+//     const [newContact] = await db.query("INSERT INTO contacts (name, contact, email, picture) values(?,?,?,?)", [name, contact, email, picture])
+//         .catch(err => console.log(err))
+//         return newContact;
+// }
